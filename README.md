@@ -5,7 +5,7 @@
 Git clone the code from the repository.
 
 ```
-git clone http://...
+git clone https://github.com/syp1997/Speech2Slot.git
 ```
 
 Download 4 opensource ASR datasets: THCHS-30, Aishell, Free ST Chinese Mandarin Corpus, and Primewords Chinese Corpus Set4. These datasets can be download from http://www.openslr.org/resources.php.
@@ -126,5 +126,4 @@ python3 test.py \
         --forward_step=10 \
         --testing_file=test_data_phoneme/vndc_test_tts_phoneme.pkl
 ```
-
 
