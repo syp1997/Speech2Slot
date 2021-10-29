@@ -32,12 +32,12 @@ python train_am.py \
 
 # test on vndc human test set
 python test_am.py \
-	--vndc_testing_file=VNDC/vndc_test_human.txt \
+  --vndc_testing_file=VNDC/vndc_test_human.txt \
   --am_model_name=AM_model.h5
   
 # test on vndc tts test set
 python test_am.py \
-	--vndc_testing_file=VNDC/vndc_test_tts.txt \
+  --vndc_testing_file=VNDC/vndc_test_tts.txt \
   --am_model_name=AM_model.h5
 ```
 
@@ -48,14 +48,14 @@ It produces phoneme sequence as input for speech2slot model.
 ```shell
 # make training data for speech2slot
 python make_train_data.py \
-	--data_dir=../train_data_phoneme/ \
+  --data_dir=../train_data_phoneme/ \
   --vndc_train_file=VNDC/vndc_train.txt \
   --am_model_name=AM_model.h5 \
   --data_length=820000
   
 # make test data
 python make_test_data.py \
-	--data_dir=../test_data_phoneme/ \
+  --data_dir=../test_data_phoneme/ \
   --output_file=vndc_test_human_phoneme.pkl\
   --vndc_test_file=VNDC/vndc_test_human.txt \
   --am_model_name=AM_model.h5
