@@ -28,17 +28,17 @@ cd  Speech2Slot/AM/
 
 # train acoustic model
 python train_am.py \
-  --am_model_name=AM_model.h5
+    --am_model_name=AM_model.h5
 
 # test on vndc human test set
 python test_am.py \
-  --vndc_testing_file=VNDC/vndc_test_human.txt \
-  --am_model_name=AM_model.h5
+    --vndc_testing_file=VNDC/vndc_test_human.txt \
+    --am_model_name=AM_model.h5
   
 # test on vndc tts test set
 python test_am.py \
-  --vndc_testing_file=VNDC/vndc_test_tts.txt \
-  --am_model_name=AM_model.h5
+    --vndc_testing_file=VNDC/vndc_test_tts.txt \
+    --am_model_name=AM_model.h5
 ```
 
 ### Step 2. Make train and test data for speech2slot model.
@@ -48,24 +48,24 @@ It produces phoneme sequence as input for speech2slot model.
 ```shell
 # make training data for speech2slot
 python make_train_data.py \
-  --data_dir=../train_data_phoneme/ \
-  --vndc_train_file=VNDC/vndc_train.txt \
-  --am_model_name=AM_model.h5 \
-  --data_length=820000
+    --data_dir=../train_data_phoneme/ \
+    --vndc_train_file=VNDC/vndc_train.txt \
+    --am_model_name=AM_model.h5 \
+    --data_length=820000
   
 # make test data
 python make_test_data.py \
-  --data_dir=../test_data_phoneme/ \
-  --output_file=vndc_test_human_phoneme.pkl\
-  --vndc_test_file=VNDC/vndc_test_human.txt \
-  --am_model_name=AM_model.h5
+    --data_dir=../test_data_phoneme/ \
+    --output_file=vndc_test_human_phoneme.pkl\
+    --vndc_test_file=VNDC/vndc_test_human.txt \
+    --am_model_name=AM_model.h5
   
 # make test data
 python make_test_data.py \
-  --data_dir=../test_data_phoneme/ \
-  --output_file=vndc_test_tts_phoneme.pkl \
-  --vndc_test_file=VNDC/vndc_test_tts.txt \
-  --am_model_name=AM_model.h5
+    --data_dir=../test_data_phoneme/ \
+    --output_file=vndc_test_tts_phoneme.pkl \
+    --vndc_test_file=VNDC/vndc_test_tts.txt \
+    --am_model_name=AM_model.h5
   
 # back to Speech2Slot directory
 cd ..
